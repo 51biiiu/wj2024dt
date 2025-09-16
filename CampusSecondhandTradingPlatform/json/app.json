@@ -1,0 +1,124 @@
+{
+	"productsData": [{
+			"id": 1,
+			"title": "九成新iPhone 13 128G 蓝色 无划痕 原装配件齐全",
+			"price": 4500,
+			"originalPrice": 5999,
+			"discount": "8折",
+			"image": "../img/banner1.png",
+			"location": "校本部",
+			"postTime": "2小时前"
+		},
+		{
+			"id": 2,
+			"title": "大学物理教材 全三册 几乎全新 附赠笔记",
+			"price": 50,
+			"originalPrice": 150,
+			"discount": "3折",
+			"image": "../img/banner2.png",
+			"location": "东校区",
+			"postTime": "1天前"
+		},
+		{
+			"id": 3,
+			"title": "李宁运动鞋 42码 穿过几次 无磨损 送鞋盒",
+			"price": 180,
+			"originalPrice": 499,
+			"discount": "4折",
+			"image": "../img/banner1.png",
+			"location": "南校区",
+			"postTime": "3天前"
+		},
+		{
+			"id": 4,
+			"title": "美的小型冰箱 宿舍可用 容量80L 制冷效果好",
+			"price": 350,
+			"originalPrice": 899,
+			"discount": "4折",
+			"image": "../img/banner3.png",
+			"location": "西校区",
+			"postTime": "1周前"
+		},
+		{
+			"id": 5,
+			"title": "机械键盘 青轴 背光 游戏办公两用 手感佳",
+			"price": 120,
+			"originalPrice": 299,
+			"discount": "4折",
+			"image": "../img/banner1.png",
+			"location": "校本部",
+			"postTime": "5小时前"
+		},
+		{
+			"id": 6,
+			"title": "吉他 雅马哈F310 初学者适用 送琴包和调音器",
+			"price": 600,
+			"originalPrice": 1299,
+			"discount": "5折",
+			"image": "../img/banner2.png",
+			"location": "东校区",
+			"postTime": "2天前"
+		},
+		{
+			"id": 7,
+			"title": "考研英语历年真题 2010-2023 带详细解析",
+			"price": 30,
+			"originalPrice": 98,
+			"discount": "3折",
+			"image": "../img/banner2.png",
+			"location": "南校区",
+			"postTime": "4天前"
+		},
+		{
+			"id": 8,
+			"title": "小米手环7 几乎全新 功能完好 带原装充电器",
+			"price": 150,
+			"originalPrice": 299,
+			"discount": "5折",
+			"image": "../img/banner1.png",
+			"location": "西校区",
+			"postTime": "6小时前"
+		}
+	],
+	"moreProductsData": [{
+			"id": 9,
+			"title": "三星Galaxy Tab S7 平板 64G 带原装笔 学习娱乐两用",
+			"price": 2800,
+			"originalPrice": 4599,
+			"discount": "6折",
+			"image": "../img/banner5.png",
+			"location": "校本部",
+			"postTime": "1天前"
+		},
+		{
+			"id": 10,
+			"title": "篮球 斯伯丁NBA比赛用球 几乎全新 送打气筒",
+			"price": 80,
+			"originalPrice": 199,
+			"discount": "4折",
+			"image": "../img/banner5.png",
+			"location": "东校区",
+			"postTime": "3天前"
+		},
+		{
+			"id": 11,
+			"title": "宿舍用折叠桌 方便学习 结实耐用 可调节高度",
+			"price": 40,
+			"originalPrice": 120,
+			"discount": "3折",
+			"image": "../img/banner5.png",
+			"location": "南校区",
+			"postTime": "1周前"
+		},
+		{
+			"id": 12,
+			"title": "漫步者蓝牙耳机 音质好 续航持久 带充电盒",
+			"price": 100,
+			"originalPrice": 299,
+			"discount": "3折",
+			"image": "../img/banner5.png",
+			"location": "西校区",
+			"postTime": "5小时前"
+		}
+	]
+}

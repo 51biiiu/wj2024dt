@@ -1,0 +1,98 @@
+{
+	"contacts": [{
+			"contactId": 1,
+			"name": "小李（23版高数教材）",
+			"avatar": "../img/banner4.png",
+			"onlineStatus": "online",
+			"lastMsg": "你这本教材能再便宜点吗？",
+			"lastTime": "10:23",
+			"chatRecords": [{
+					"type": "system",
+					"content": "2024年09月16日 星期一"
+				},
+				{
+					"type": "received",
+					"sender": "小李",
+					"avatar": "https://picsum.photos/id/64/50/50",
+					"content": "你好！我看到你发布的23版高数教材，请问还在吗？",
+					"time": "09:45"
+				},
+				{
+					"type": "sent",
+					"sender": "我",
+					"avatar": "https://picsum.photos/id/91/50/50",
+					"content": "在的，几乎全新，没有笔记",
+					"time": "09:47"
+				},
+				{
+					"type": "received",
+					"sender": "小李",
+					"avatar": "https://picsum.photos/id/64/50/50",
+					"content": "你这本教材能再便宜点吗？我看别人卖20，你卖25",
+					"time": "10:23"
+				}
+			]
+		},
+		{
+			"contactId": 2,
+			"name": "小王（无线鼠标）",
+			"avatar": "https://picsum.photos/id/65/50/50",
+			"onlineStatus": "offline",
+			"lastMsg": "鼠标续航大概多久呀？",
+			"lastTime": "昨天",
+			"chatRecords": [{
+					"type": "system",
+					"content": "2024年09月15日 星期日"
+				},
+				{
+					"type": "received",
+					"sender": "小王",
+					"avatar": "https://picsum.photos/id/65/50/50",
+					"content": "你好，无线鼠标是全新的吗？",
+					"time": "15:30"
+				},
+				{
+					"type": "sent",
+					"sender": "我",
+					"avatar": "https://picsum.photos/id/91/50/50",
+					"content": "不是全新，用了3个月，没有划痕，续航大概15天",
+					"time": "15:32"
+				},
+				{
+					"type": "received",
+					"sender": "小王",
+					"avatar": "https://picsum.photos/id/65/50/50",
+					"content": "鼠标续航大概多久呀？",
+					"time": "15:35"
+				}
+			]
+		},
+		{
+			"contactId": 3,
+			"name": "平台客服",
+			"avatar": "https://picsum.photos/id/66/50/50",
+			"onlineStatus": "online",
+			"lastMsg": "你的反馈已收到，正在处理",
+			"lastTime": "09-15",
+			"chatRecords": [{
+					"type": "system",
+					"content": "2024年09月15日 星期日"
+				},
+				{
+					"type": "sent",
+					"sender": "我",
+					"avatar": "https://picsum.photos/id/91/50/50",
+					"content": "反馈中心提交的商品分类问题，什么时候能处理？",
+					"time": "09:10"
+				},
+				{
+					"type": "received",
+					"sender": "平台客服",
+					"avatar": "https://picsum.photos/id/66/50/50",
+					"content": "你的反馈已收到，正在处理",
+					"time": "09:15"
+				}
+			]
+		}
+	]
+}
