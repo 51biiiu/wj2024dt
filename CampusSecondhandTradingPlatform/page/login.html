@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>闲闲校园二手交易登录</title>
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+		
+		<link rel="stylesheet" href="../css/app.css">
+	</head>
+	<body>
+		<div style="padding: 8%; background-image:url(../img/logintutu.png);">
+			<div class="container container-login">
+				<div class="row">
+					<div class="col">
+						<div class="row">
+							<div class="col">
+								<!-- 添加data-type标识表单类型 -->
+								<button type="button" class="btn login-btu switch-item active" data-type="sms">短信登录</button>
+							</div>
+							<div class="col">
+								<button type="button" class="btn login-btu switch-item" data-type="password">密码登录</button>
+							</div>
+						</div>
+						<div>
+							<!-- 密码登录表单 - 默认隐藏，添加类型标识 -->
+							<form action="./landing.html" class="was-validated login-form password-login">
+								<div class="form-group">
+									<input type="text" class="form-control" id="uname" placeholder="手机号、学号、邮箱" name="uname"
+										required>
+									<div class="valid-feedback"></div>
+									<div class="invalid-feedback">请输入用户名！</div>
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" id="pwd" placeholder="请输入密码"
+										name="pswd" required>
+									<div class="valid-feedback"></div>
+									<div class="invalid-feedback">请输入密码</div>
+								</div>
+								<div class="form-group form-check">
+									<label class="form-check-label">
+										<input class="form-check-input" type="checkbox" name="remember" required> 您已阅读并同意<a
+											href="https://terms.alicdn.com/">用户服务协议</a>和<a
+											href="https://terms.alicdn.com/">隐私政策</a>
+			
+										<div class="valid-feedback"></div>
+										<div class="invalid-feedback">同意协议才能提交。</div>
+										<p style="font-size: 12px; margin-left: 180px;"><a
+												href="https://terms.alicdn.com/">忘记密码|</a><a
+												href="./registerform.html">注册新用户</a></p>
+									</label>
+								</div>
+								<button type="submit" class="btn btn-primary bt-sub">提交</button>
+							</form>
+							
+							<!-- 短信登录表单 - 默认显示，添加类型标识 -->
+							<form action="./landing.html" class="was-validated login-form sms-login active">
+								<div class="form-group">
+									<input type="text" class="form-control" id="unphone" placeholder="手机号" name="unphone"
+										required>
+									<div class="valid-feedback"></div>
+									<div class="invalid-feedback">请输入手机号！</div>
+								</div>
+								<div class="form-group">
+									<!-- 修复占位符文本 -->
+									<input type="text" class="form-control" id="validate" placeholder="请输入6位验证码"
+										name="vldt" required maxlength="6" minlength="6">
+									<div class="valid-feedback"></div>
+									<div class="invalid-feedback">请输入6位验证码！</div>
+								</div>
+								<div class="form-group form-check">
+									<label class="form-check-label">
+										<input class="form-check-input" type="checkbox" name="remember" required> 您已阅读并同意<a
+											href="https://terms.alicdn.com/">用户服务协议</a>和<a
+											href="https://terms.alicdn.com/">隐私政策</a>
+			
+										<div class="valid-feedback"></div>
+										<div class="invalid-feedback">同意协议才能提交。</div>
+										<p style="font-size: 12px; margin-left: 180px;"><a
+												href="https://terms.alicdn.com/">忘记密码|</a><a
+												href="registerform.html">注册新用户</a></p>
+									</label>
+								</div>
+								<button type="submit" class="btn btn-primary bt-sub">提交</button>
+							</form>
+						</div>
+					</div>
+					<div class="col login-parent">
+						<div class="login-center">
+							<label style="font-size: 23px;margin-bottom: 10%;">手机扫码安全登录</label>
+							<img src="../img/login.png" class="login-img" alt="登录二维码">
+							<label style="font-size: 16px;margin-left: 5%;">打开手机APP扫码</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/app.js"></script>
+	</body>
+</html>

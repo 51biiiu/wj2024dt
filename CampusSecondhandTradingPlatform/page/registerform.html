@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>闲闲用户注册</title>
+		<!--Font Awesome 图标-->
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+
+		<link rel="stylesheet" href="../css/app.css">
+		<style>
+			#beij {
+				margin: 0% 0%;
+				padding: 2% 0%;
+				width: 100%;
+				height: 100%;
+				background-color: #F8F9FB;
+			}
+
+			.container-register {
+				padding: 0% 2%;
+				background-color: white;
+				width: 750px;
+				border-radius: 7px;
+			}
+			#biaotou {
+				width: 100%;
+				height: 100%;
+				padding-top: 37.75px;
+				padding-left: 25px;
+				padding-right: 0px;
+				padding-bottom: 1px;
+				text-align: left;
+			}
+
+			#formmat {
+				font-size: 16px;
+				color: #444333;
+			}
+
+			#xing {
+				color: darkred;
+				font-size: 16px;
+			}
+
+			#mowei {
+				padding-left: 75%;
+				padding-bottom: 4%;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="background-color: #ffe60f" class="container-fluid csttop">
+			<div class="d-flex w-100 h-32 justify-content-center align-items-center">
+				<div class="cstlogo d-flex w-100 h-32">
+					<img src="../img/logo.png"><img src="../img/logo.png">
+				</div>
+				<div class="cstsearch">——新用户注册</div>
+				<div style="padding-left: 25%;">
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+
+		<div id="beij">
+			<div class="container-register container">
+				<div id="biaotou">
+					<h3>&nbsp;&nbsp;新用户注册</h3>
+				</div>
+				<hr>
+				<form action="./login.html" id="formmat" onsubmit="return checktable()">
+					<div class="mb-3 mt-3 ml-4 mr-4">
+						用户名：<span id="xing">*</span><br>
+						<input class="form-control" type="text" placeholder="请输入用户名" required>
+					</div>
+					<div>
+						性别<span id="xing">*</span><br><input type="radio" name="panduan" class="form-check-input"
+							id="" required>男
+						&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="panduan" class="form-check-input" id="" required>女
+					</div>
+					<div class="mb-3 mt-3 ml-4 mr-4">
+						手机号：<span id="xing">*</span><br><input name="userphone" id="userphone" class="form-control" type="text" required minlength="11"
+							placeholder="请输入11位手机号"><span id="unuserphone" style="color:red"></span>
+					</div>
+					<div class="mb-3 mt-3 ml-4 mr-4">
+						验证码：<span id="xing">*</span><br><input class="form-control" type="text" id="uservali" name="uservali"
+							placeholder="请输入6位验证码" required><span id="unuservali" style="color:red"></span>
+					</div>
+					<div class="mb-3 mt-3 ml-4 mr-4">
+						邮箱：<br><input name="useremail" id="useremail" class="form-control" type="text" placeholder="请输入邮箱"><span id="unuseremail" style="color:red"></span>
+					</div>
+					<div class="mb-3 mt-3 ml-4 mr-4">
+						姓名：<br><input name="username" id="username" class="form-control" type="text" placeholder="请输入学生姓名"><span id="unusername" style="color:red"></span>
+					</div>
+					<div class="mb-3 mt-3 ml-4 mr-4">
+						学号：<br><input class="form-control" type="text" placeholder="请输入学号">
+					</div>
+					
+					<div class="mb-3 mt-3 ml-4 mr-4">
+						密码：<span id="xing">*</span><br><input required minlength="6" maxlength="30" name="usercode" id="usercode" class="form-control" type="password" placeholder="请输入6-30位密码包含大小写字母数字">
+					<span id="unusercode" style="color:red"></span>
+					</div>
+					<div class="mb-3 mt-3 ml-4 mr-4">
+						确认密码：<span id="xing">*</span><br><input required minlength="6" maxlength="30" name="comfusercode" id="comfusercode" class="form-control" type="password" placeholder="请再次输入密码">
+						<span id="uncomfusercode" style="color:red"></span>
+					</div>
+					<div class="mb-3 mt-3 ml-4 mr-4">
+						<input class="form-check-input" type="checkbox" required>请勾选<a
+											href="https://terms.alicdn.com/">闲闲用户服务协议</a>和<a
+											href="https://terms.alicdn.com/">隐私政策</a>
+					</div>
+					<div class="mb-45 mt-15 ml-4 mr-4" id="mowei">
+						&nbsp;
+						<button type="submit" class="btn btn-primary">
+							<i class="fa fa-user" style="font-size:16px;color:white;"></i>&nbsp;注册
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script src="../js/app.js"></script>
+	</body>
+	<script>
+		function checktable(){
+			flag = true;
+			let username = document.getElementById("username");
+			let userphone = document.getElementById("userphone");
+			let usercode = document.getElementById("usercode");
+			let useremail = document.getElementById("useremail");
+			let uservali = document.getElementById("uservali");
+			let reg1 = /^[\u4e00-\u9fa5]{2,6}$/;
+			let reg2 = /^1[3-9]\d{9}$/;
+			let reg3 = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{6,30}$/;
+			let reg4 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+			let reg5 = document.getElementById("comfusercode").value;
+			let reg6 = /^[0-9]{6}$/;
+			if(username.value !=""&&!reg1.test(username.value)){
+				document.getElementById("unusername").innerText="如果你是中国人，请输入中国汉字";
+				return false;
+			}else{
+				document.getElementById("unusername").innerText="";
+			}
+			if(!reg2.test(userphone.value)){
+				document.getElementById("unuserphone").innerText="电话号格式错误，请输入中国地域标准号码";
+				return false;
+			}else{
+				document.getElementById("unuserphone").innerText="";
+			}
+			if(!reg3.test(usercode.value)){
+				document.getElementById("unusercode").innerText="6-30位字符，包括数字、大小写字母";
+				return false;
+			}else{
+				document.getElementById("unusercode").innerText="";
+			}
+			if(useremail.value !=""&&!reg4.test(useremail.value)){
+				document.getElementById("unuseremail").innerText="要写就写对，请输入正确邮箱";
+				return false;
+			}else{
+				document.getElementById("unuseremail").innerText="";
+			}
+			if(reg5!=usercode.value){
+				document.getElementById("uncomfusercode").innerText="密码再写一次都能错？";
+				return false;
+			}else{
+				document.getElementById("uncomfusercode").innerText="";
+			}
+			if(!reg6.test(uservali.value)){
+				document.getElementById("unuservali").innerText="请输入6位数字验证码";
+				return false;
+			}else{
+				document.getElementById("unuservali").innerText="";
+			}
+			return flag;
+	}
+	</script>
+</html>

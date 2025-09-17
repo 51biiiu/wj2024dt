@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>校园二手交易平台 - 让闲置流动起来</title>
+		<!--Font Awesome 图标-->
+		<link rel="shortcut icon" href="../img/favicon.png">
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+
+		<link rel="stylesheet" href="../css/app.css">
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<!--顶部栏-->
+		<div style="background-color: #ffe60f" class="container-fluid csttop">
+			<div class="d-flex w-100 justify-content-center align-items-center">
+				<div class="cstlogo d-flex">
+					<img src="../img/logo.png" alt="logo">
+					<img src="../img/logo.png" alt="logo">
+				</div>
+				<div class="cstsearch">
+					<input class="cstitem" type="text" placeholder="搜索...">
+					<i class="fa fa-search"></i>
+				</div>
+				<div style="padding-left: 25%;">
+					<button class="landbtu" onclick="window.location.href='./login.html'"><i class="fa fa-user"></i>
+						登录</button>
+					<button class="landbtu" onclick="window.location.href='./individualcenter.html'"><i
+							class="fa fa-shopping-cart"></i> 订单</button>
+				</div>
+			</div>
+		</div>
+		<!--身体-->
+		<div style="background-color: #f5f7f9;" class="container">
+			<div class="container container1">
+				<!--分类栏-->
+				<div class="category-container">
+					<div class="category-item">
+						<i class="fa fa-mobile"></i>
+						<span>手机 / 数码 / 电脑</span>
+					</div>
+					<div class="category-item">
+						<i class="fa fa-shopping-bag"></i>
+						<span>服饰 / 箱包 / 运动</span>
+					</div>
+					<div class="category-item">
+						<i class="fa fa-gamepad"></i>
+						<span>技能 / 卡券 / 潮玩</span>
+					</div>
+
+					<div class="category-item">
+						<i class="fa fa-diamond"></i>
+						<span>文玩 / 珠宝 / 礼品</span>
+					</div>
+					<div class="category-item">
+						<i class="fa fa-leaf"></i>
+						<span>食品 / 宠物 / 花卉</span>
+					</div>
+					<div class="category-item">
+						<i class="fa fa-book"></i>
+						<span>图书 / 游戏 / 音像</span>
+					</div>
+					<div class="category-item">
+						<i class="fa fa-car"></i>
+						<span>汽车 / 电动车 / 租房</span>
+					</div>
+				</div>
+				<!--banner图-->
+				<div class="container container-banner">
+					<!-- 轮播 -->
+					<div id="demo" class="carousel slide" data-bs-ride="carousel">
+						<!-- 指示符 -->
+						<div class="carousel-indicators">
+							<button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+							<button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+							<button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+						</div>
+						<!-- 轮播图片 -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="../img/banner1.png" class="d-block"
+									style="width:100%; height: 300px; object-fit: cover;">
+							</div>
+							<div class="carousel-item">
+								<img src="../img/banner2.png" class="d-block"
+									style="width:100%; height: 300px; object-fit: cover;">
+							</div>
+							<div class="carousel-item">
+								<img src="../img/banner3.png" class="d-block"
+									style="width:100%; height: 300px; object-fit: cover;">
+							</div>
+						</div>
+						<!-- 左右切换按钮 -->
+						<button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</button>
+					</div>
+				</div>
+
+			</div>
+			<div class="container category-section mt-4">
+				<!-- 右侧固定按钮组 -->
+				<div class="btn-group-vertical fixed-right-btn-group">
+					<!-- 1. 发布闲置（黄色按钮+图标） -->
+					<button type="button" class="btn btn-yellow" title="发布闲置"
+					 onclick="window.location.href='./issue.html'">
+						<i class="fa fa-plus"></i>
+					</button>
+
+					<!-- 2. 聊一聊（白色按钮+图标） -->
+					<button type="button" class="btn btn-white" title="聊一聊"
+						onclick="window.location.href='./chat.html'">
+						<i class="fa fa-comments"></i>
+					</button>
+					<!-- 3. 我的收藏（白色按钮，新增） -->
+					<button type="button" class="btn btn-white" title="我的收藏"
+						onclick="window.location.href='./individualcenter.html'">
+						<i class="fa fa-star"></i> <!-- 星星图标代表收藏 -->
+					</button>
+					<!-- 3. 个人中心（白色按钮+图标） -->
+					<button type="button" class="btn btn-white" title="个人中心"
+						onclick="window.location.href='./individualcenter.html'">
+						<i class="fa fa-user"></i>
+					</button>
+
+					<!-- 4. 反馈中心（下拉菜单：黄色按钮+图标） -->
+					<div class="btn-group">
+						<button type="button" class="btn btn-yellow dropdown-toggle" data-bs-toggle="dropdown"
+							title="反馈中心">
+							<i class="fa fa-commenting-o"></i>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="./feedback.html"><i
+										class="fa fa-paper-plane mr-2"></i>提交反馈</a></li>
+							<li><a class="dropdown-item" href="./individualcenter.html"><i
+										class="fa fa-history mr-2"></i>反馈记录</a></li>
+						</ul>
+					</div>
+				</div>
+				<h3 class="section-title mb-3">校园热门专区</h3>
+				<div class="row g-3">
+					<!-- 二手书专区 -->
+					<div class="col-md-3 col-sm-6">
+						<a href="" class="category-card d-block">
+							<div class="category-icon">
+								<i class="fa fa-book"></i>
+							</div>
+							<div class="category-name">二手书专区</div>
+							<div class="category-desc">教材/考研/小说</div>
+						</a>
+					</div>
+					<!-- 数码产品专区 -->
+					<div class="col-md-3 col-sm-6">
+						<a href="" class="category-card d-block">
+							<div class="category-icon">
+								<i class="fa fa-mobile"></i>
+							</div>
+							<div class="category-name">数码产品专区</div>
+							<div class="category-desc">手机/电脑/耳机</div>
+						</a>
+					</div>
+					<!-- 服饰箱包专区 -->
+					<div class="col-md-3 col-sm-6">
+						<a href="" class="category-card d-block">
+							<div class="category-icon">
+								<i class="fa fa-shopping-bag"></i>
+							</div>
+							<div class="category-name">服饰箱包专区</div>
+							<div class="category-desc">衣服/鞋子/背包</div>
+						</a>
+					</div>
+					<!-- 宿舍用品专区 -->
+					<div class="col-md-3 col-sm-6">
+						<a href="" class="category-card d-block">
+							<div class="category-icon">
+								<i class="fa fa-home"></i>
+							</div>
+							<div class="category-name">宿舍用品专区</div>
+							<div class="category-desc">床垫/书桌/收纳</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<!-- 商品展示区 -->
+			<div class="product-section">
+				<h2 class="section-title">推荐商品</h2>
+				<div class="row" id="product-container">
+					<!-- 商品卡片将通过JavaScript动态生成 -->
+				</div>
+
+				<div class="load-more">
+					<button class="load-more-btn" id="load-more">加载更多 <i class="fa fa-refresh"></i></button>
+				</div>
+			</div>
+		</div>
+
+		<script src="../js/app.js"></script>
+	</body>
+</html>

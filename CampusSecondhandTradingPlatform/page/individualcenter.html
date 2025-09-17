@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>校园二手交易平台 - 个人中心</title>
+		<!--Font Awesome 图标-->
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+
+		<link rel="stylesheet" href="../css/app.css">
+		<style>
+			/* 1. 顶部栏样式（个人中心专属：移除搜索框，简化布局） */
+			.csttop {
+				height: 80px;
+				background-color: #ffe60f;
+				/* 保持黄色主色调 */
+				display: flex;
+				align-items: center;
+				padding: 0 20px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			}
+
+			.cstlogo {
+				display: flex;
+				align-items: center;
+			}
+
+			.cstlogo img {
+				height: 40px;
+				margin-right: 10px;
+			}
+
+			/* 个人中心标题：居中显示 */
+			.center-title {
+				font-size: 20px;
+				font-weight: 600;
+				color: #333;
+				margin: 0 auto;
+				/* 让标题在顶部栏居中 */
+			}
+
+			/* 返回首页按钮：居右 */
+			.back-home {
+				color: #333;
+				font-size: 16px;
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+			}
+
+			.back-home i {
+				margin-right: 5px;
+			}
+
+			.back-home:hover {
+				color: #000;
+				text-decoration: none;
+			}
+
+			/* 2. 个人中心主体样式：黄白配色，微信列表风 */
+			.profile-container {
+				background-color: #f5f7f9;
+				/* 浅灰背景，贴合整体风格 */
+				min-height: calc(100vh - 80px);
+				/* 占满剩余高度 */
+				padding: 20px 0;
+			}
+
+			/* 卡片容器：白色背景，圆角+阴影 */
+			.profile-card {
+				background-color: #fff;
+				border-radius: 12px;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+				margin: 0 15px 15px;
+				/* 左右间距，上下间距 */
+				overflow: hidden;
+			}
+
+			/* 3. 用户信息模块：顶部通栏 */
+			.user-info {
+				padding: 20px 15px;
+				display: flex;
+				align-items: center;
+				border-bottom: 1px solid #eee;
+				/* 分隔线 */
+			}
+
+			/* 用户头像：圆形，黄色边框 */
+			.user-avatar {
+				width: 70px;
+				height: 70px;
+				border-radius: 50%;
+				border: 3px solid #ffe60f;
+				/* 黄色边框，呼应主色调 */
+				overflow: hidden;
+				margin-right: 15px;
+			}
+
+			.user-avatar img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			/* 用户信息文本区 */
+			.user-text {
+				flex: 1;
+				/* 占满剩余宽度 */
+			}
+
+			.user-name {
+				font-size: 18px;
+				font-weight: 600;
+				color: #333;
+				margin-bottom: 5px;
+			}
+
+			.user-id {
+				font-size: 14px;
+				color: #999;
+			}
+
+			/* 编辑按钮：黄色文字，右对齐 */
+			.edit-btn {
+				color: #ffe60f;
+				font-size: 14px;
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+			}
+
+			.edit-btn i {
+				margin-left: 5px;
+			}
+
+			.edit-btn:hover {
+				color: #ffd900;
+				text-decoration: none;
+			}
+
+			/* 4. 功能列表模块：微信列表式 */
+			.profile-list {
+				padding: 10px 0;
+			}
+
+			/* 列表项：左右布局，带箭头 */
+			.list-item {
+				display: flex;
+				align-items: center;
+				padding: 15px 15px;
+				color: #333;
+				text-decoration: none;
+				border-bottom: 1px solid #eee;
+				/* 列表项分隔线 */
+			}
+
+			.list-item:last-child {
+				border-bottom: none;
+				/* 最后一项无分隔线 */
+			}
+
+			.list-item:hover {
+				background-color: #f8f9fa;
+				/* hover浅灰背景 */
+				color: #333;
+				text-decoration: none;
+			}
+
+			/* 列表图标：黄色，固定宽度 */
+			.list-icon {
+				width: 24px;
+				height: 24px;
+				color: #ffe60f;
+				/* 黄色图标，呼应主色调 */
+				font-size: 20px;
+				margin-right: 15px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			/* 列表文本：占满中间 */
+			.list-text {
+				flex: 1;
+				font-size: 16px;
+			}
+
+			/* 列表箭头：灰色，居右 */
+			.list-arrow {
+				color: #ccc;
+				font-size: 16px;
+			}
+
+			/* 5. 空内容占位框：预留填充区域 */
+			.empty-box {
+				padding: 60px 20px;
+				text-align: center;
+				color: #999;
+			}
+
+			.empty-icon {
+				font-size: 48px;
+				margin-bottom: 15px;
+				color: #eee;
+			}
+
+			.empty-text {
+				font-size: 14px;
+			}
+
+			/* 新增：收藏商品卡片样式（符合需求说明） */
+			.collection-list {
+				padding: 10px 15px;
+			}
+
+			/* 收藏商品卡片：图文布局 */
+			.collection-card {
+				display: flex;
+				padding: 12px 0;
+				border-bottom: 1px solid #eee;
+			}
+
+			.collection-card:last-child {
+				border-bottom: none;
+			}
+
+			/* 商品图片 */
+			.collec-goods-img {
+				width: 80px;
+				height: 80px;
+				border-radius: 8px;
+				overflow: hidden;
+				margin-right: 12px;
+				flex-shrink: 0;
+			}
+
+			.collec-goods-img img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			/* 商品信息区：占满中间 */
+			.collec-goods-info {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			/* 商品名称：最多2行，超出省略 */
+			.goods-name {
+				font-size: 15px;
+				color: #333;
+				line-height: 1.4;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				margin-bottom: 5px;
+			}
+
+			/* 商品属性：新旧程度+卖家 */
+			.goods-attr {
+				display: flex;
+				justify-content: space-between;
+				font-size: 12px;
+				color: #999;
+				margin-bottom: 8px;
+			}
+
+			/* 新旧程度标签：按需求标色 */
+			.goods-condition {
+				padding: 2px 6px;
+				border-radius: 4px;
+			}
+
+			.condition-95 {
+				background-color: #e6f7e6;
+				color: #00a86b;
+				/* 95新：绿色 */
+			}
+
+			.condition-90 {
+				background-color: #e6f3ff;
+				color: #0066cc;
+				/* 9新：蓝色 */
+			}
+
+			.condition-70 {
+				background-color: #fff2e6;
+				color: #ff6600;
+				/* 7新及以下：橙色 */
+			}
+
+			/* 商品价格：转让价加粗，原价高亮 */
+			.goods-price {
+				display: flex;
+				align-items: baseline;
+			}
+
+			.sell-price {
+				font-size: 16px;
+				font-weight: 600;
+				color: #ff4400;
+				margin-right: 8px;
+			}
+
+			.org-price {
+				font-size: 12px;
+				color: #999;
+				text-decoration: line-through;
+				background-color: #fff8e6;
+				/* 原价高亮黄色背景 */
+				padding: 0 3px;
+			}
+
+			/* 操作按钮区：聊一聊+立即购买+取消收藏 */
+			.collec-operate {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+				justify-content: center;
+				gap: 8px;
+			}
+
+			.operate-btn {
+				font-size: 12px;
+				padding: 4px 10px;
+				border-radius: 4px;
+				text-decoration: none;
+				border: none;
+				cursor: pointer;
+			}
+
+			/* 聊一聊按钮：灰色 */
+			.chat-btn {
+				background-color: #f5f5f5;
+				color: #333;
+			}
+
+			.chat-btn:hover {
+				background-color: #eee;
+				color: #333;
+				text-decoration: none;
+			}
+
+			/* 立即购买按钮：橙色 */
+			buy-btn {
+				background-color: #ff6600;
+				color: #fff;
+			}
+
+			buy-btn:hover {
+				background-color: #e55a00;
+				color: #fff;
+				text-decoration: none;
+			}
+
+			/* 取消收藏按钮：红色 */
+			.cancel-collec {
+				background-color: #ff4444;
+				color: #fff;
+			}
+
+			.cancel-collec:hover {
+				background-color: #cc0000;
+				color: #fff;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 顶部栏（个人中心专属：移除搜索框，保留logo+标题+返回按钮） -->
+		<div class="container-fluid csttop">
+			<div class="cstlogo">
+				<img src="../img/logo.png" alt="logo">
+				<img src="../img/logo.png" alt="logo">
+			</div>
+			<h3 class="center-title">个人中心</h3>
+			<a href="./landing.html" class="back-home">
+				<i class="fa fa-home"></i> 返回首页
+			</a>
+		</div>
+
+		<!-- 个人中心主体 -->
+		<div class="profile-container">
+			<div class="container">
+				<!-- 1. 用户信息卡片 -->
+				<div class="profile-card">
+					<div class="user-info">
+						<!-- 头像（空占位，后续替换） -->
+						<div class="user-avatar">
+							<img src="../img/banner6.png" alt="用户头像">
+						</div>
+						<!-- 用户信息（空占位，后续补充） -->
+						<div class="user-text">
+							<div class="user-name">游客123456（待登录）</div>
+							<div class="user-id">学号/ID：xxxXXXXXXX（待登录）</div>
+						</div>
+						<!-- 编辑按钮 -->
+						<a href="javascript:;" class="edit-btn">
+							编辑资料 <i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- 2. 我的订单卡片 -->
+				<div class="profile-card">
+					<a href="javascript:;" class="list-item">
+						<div class="list-icon">
+							<i class="fa fa-shopping-cart"></i>
+						</div>
+						<div class="list-text">我的订单</div>
+						<div class="list-arrow">
+							<i class="fa fa-angle-right"></i>
+						</div>
+					</a>
+					<!-- 订单空内容占位框 -->
+					<div class="empty-box">
+						<div class="empty-icon">
+							<i class="fa fa-file-text-o"></i>
+						</div>
+						<div class="empty-text">暂无订单记录，快去逛逛吧～</div>
+					</div>
+				</div>
+
+				<!-- 3. 我的收藏卡片（优化：添加商品卡片，符合需求说明） -->
+				<div class="profile-card">
+					<a href="javascript:;" class="list-item">
+						<div class="list-icon">
+							<i class="fa fa-star"></i>
+						</div>
+						<div class="list-text">我的收藏</div>
+						<div class="list-arrow">
+							<i class="fa fa-angle-right"></i>
+						</div>
+					</a>
+					<!-- 收藏商品列表（新增：3个商品卡片，含图片、名称、价格、新旧程度、操作按钮） -->
+					<div class="collection-list">
+						<!-- 商品1：考研数学资料（95新） -->
+						<div class="collection-card">
+							<div class="collec-goods-img">
+								<img src="../img/kaoyan-math.jpg" alt="考研数学资料">
+							</div>
+							<div class="collec-goods-info">
+								<div class="goods-name">24版考研数学一真题解析（无笔记）</div>
+								<div class="goods-attr">
+									<span class="goods-condition condition-95">95新</span>
+									<span class="seller-name">卖家：研一学长</span>
+								</div>
+								<div class="goods-price">
+									<span class="sell-price">35.00元</span>
+									<span class="org-price">原价：68元</span>
+								</div>
+							</div>
+							<div class="collec-operate">
+								<a href="./chat.html" class="operate-btn chat-btn">聊一聊</a>
+								<a href="javascript:;" class="operate-btn buy-btn">立即购买</a>
+								<a href="javascript:;" class="operate-btn cancel-collec">取消收藏</a>
+							</div>
+						</div>
+
+						<!-- 商品2：无线鼠标（9新） -->
+						<div class="collection-card">
+							<div class="collec-goods-img">
+								<img src="../img/wireless-mouse.jpg" alt="无线鼠标">
+							</div>
+							<div class="collec-goods-info">
+								<div class="goods-name">罗技G304无线鼠标（续航持久）</div>
+								<div class="goods-attr">
+									<span class="goods-condition condition-90">9新</span>
+									<span class="seller-name">卖家：大三电竞社</span>
+								</div>
+								<div class="goods-price">
+									<span class="sell-price">89.00元</span>
+									<span class="org-price">原价：199元</span>
+								</div>
+							</div>
+							<div class="collec-operate">
+								<a href="./chat.html" class="operate-btn chat-btn">聊一聊</a>
+								<a href="javascript:;" class="operate-btn buy-btn">立即购买</a>
+								<a href="javascript:;" class="operate-btn cancel-collec">取消收藏</a>
+							</div>
+						</div>
+
+						<!-- 商品3：宿舍收纳盒（7新及以下） -->
+						<div class="collection-card">
+							<div class="collec-goods-img">
+								<img src="../img/storage-box.jpg" alt="宿舍收纳盒">
+							</div>
+							<div class="collec-goods-info">
+								<div class="goods-name">宿舍多层收纳盒（可放书本/杂物）</div>
+								<div class="goods-attr">
+									<span class="goods-condition condition-70">7新及以下</span>
+									<span class="seller-name">卖家：毕业学姐</span>
+								</div>
+								<div class="goods-price">
+									<span class="sell-price">12.00元</span>
+									<span class="org-price">原价：35元</span>
+								</div>
+							</div>
+							<div class="collec-operate">
+								<a href="./chat.html" class="operate-btn chat-btn">聊一聊</a>
+								<a href="javascript:;" class="operate-btn buy-btn">立即购买</a>
+								<a href="javascript:;" class="operate-btn cancel-collec">取消收藏</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 4. 我的反馈记录卡片 -->
+				<div class="profile-card">
+					<a href="javascript:;" class="list-item">
+						<div class="list-icon">
+							<i class="fa fa-commenting-o"></i>
+						</div>
+						<div class="list-text">我的反馈记录</div>
+						<div class="list-arrow">
+							<i class="fa fa-angle-right"></i>
+						</div>
+					</a>
+					<!-- 反馈空内容占位框 -->
+					<div class="empty-box">
+						<div class="empty-icon">
+							<i class="fa fa-paper-plane-o"></i>
+						</div>
+						<div class="empty-text">暂无反馈记录，有问题可前往反馈中心提交～</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../js/app.js">
+			// 可选：取消收藏功能（简单JS示例，点击移除卡片）
+			document.querySelectorAll('.cancel-collec').forEach(btn => {
+				btn.addEventListener('click', function() {
+					if (confirm('确定要取消收藏该商品吗？')) {
+						this.closest('.collection-card').remove();
+						// 若删除后无商品，可显示空占位框
+						const collectionList = document.querySelector('.collection-list');
+						if (collectionList.children.length === 0) {
+							collectionList.innerHTML = `
+								<div class="empty-box">
+									<div class="empty-icon">
+										<i class="fa fa-heart-o"></i>
+									</div>
+									<div class="empty-text">暂无商品，点击图标添加商品进入收藏～</div>
+								</div>
+							`;
+						}
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

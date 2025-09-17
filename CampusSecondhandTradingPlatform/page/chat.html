@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>校园二手交易 - 聊天界面</title>
+		<!-- 引入外部资源 -->
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+		<!-- 引入自定义CSS -->
+		<link rel="stylesheet" href="../css/chat.css">
+	</head>
+	<body>
+		<!-- 顶部栏（黄白色风格，简化设计） -->
+		<div class="chat-topbar">
+			<div class="container-fluid h-100">
+				<div class="d-flex h-100 align-items-center">
+					<!-- 返回按钮 -->
+					<a href="./individualcenter.html" class="back-btn text-dark">
+						<i class="fa fa-angle-left mr-2"></i> 返回个人中心
+					</a>
+					<!-- 页面标题（居中） -->
+					<h3 class="chat-title mx-auto">消息中心</h3>
+					<!-- 右侧功能按钮（占位，可扩展搜索/设置） -->
+					<div class="func-btn">
+						<i class="fa fa-search text-dark mr-3"></i>
+						<i class="fa fa-cog text-dark"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 主体聊天区域（左侧联系人+右侧聊天窗口） -->
+		<div class="chat-container">
+			<!-- 左侧：联系人列表 -->
+			<div class="contact-list">
+				<!-- 搜索联系人 -->
+				<div class="search-contact">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="搜索联系人/商品">
+						<span class="input-group-text bg-white">
+							<i class="fa fa-search text-gray"></i>
+						</span>
+					</div>
+				</div>
+
+				<!-- 联系人列表项（默认选中第一个） -->
+				<div class="contact-items">
+					<div class="contact-item active" data-contact-id="1">
+						<div class="contact-avatar">
+							<img src="../img/banner4.png" alt="联系人头像">
+							<span class="online-status online"></span>
+						</div>
+						<div class="contact-info">
+							<div class="contact-name">小李（23版高数教材）</div>
+							<div class="last-msg">你这本教材能再便宜点吗？</div>
+						</div>
+						<div class="contact-time">10:23</div>
+					</div>
+
+					<div class="contact-item" data-contact-id="2">
+						<div class="contact-avatar">
+							<img src="../img/banner4.png" alt="联系人头像">
+							<span class="online-status offline"></span>
+						</div>
+						<div class="contact-info">
+							<div class="contact-name">小王（无线鼠标）</div>
+							<div class="last-msg">鼠标续航大概多久呀？</div>
+						</div>
+						<div class="contact-time">昨天</div>
+					</div>
+
+					<div class="contact-item" data-contact-id="3">
+						<div class="contact-avatar">
+							<img src="../img/banner2.png" alt="联系人头像">
+							<span class="online-status online"></span>
+						</div>
+						<div class="contact-info">
+							<div class="contact-name">平台客服</div>
+							<div class="last-msg">你的反馈已收到，正在处理</div>
+						</div>
+						<div class="contact-time">09-15</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 右侧：聊天窗口（默认显示第一个联系人的聊天记录，内容由JS加载） -->
+			<div class="chat-window">
+				<!-- 聊天窗口头部（联系人信息） -->
+				<div class="chat-header">
+					<div class="contact-avatar">
+						<img src="../img/banner6.png" alt="联系人头像">
+						<span class="online-status online"></span>
+					</div>
+					<div class="contact-name">小李（23版高数教材）</div>
+					<div class="chat-func">
+						<i class="fa fa-phone text-dark mr-3"></i>
+						<i class="fa fa-info-circle text-dark"></i>
+					</div>
+				</div>
+
+				<!-- 聊天内容区域（空容器，由JS从JSON加载内容） -->
+				<div class="chat-content" id="chatContent"></div>
+
+				<!-- 消息输入区域 -->
+				<div class="chat-input">
+					<div class="input-tools">
+						<i class="fa fa-smile-o text-gray"></i>
+						<i class="fa fa-picture-o text-gray mx-3"></i>
+						<i class="fa fa-paperclip text-gray"></i>
+					</div>
+					<input type="text" class="form-control" id="msgInput" placeholder="输入消息...">
+					<button class="send-btn" id="sendBtn">发送</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- 先引入JSON数据（通过script标签加载，避免跨域），再引入JS -->
+		<script src="../json/chatData.json" type="application/json" id="chatData"></script>
+		<script src="../js/chat.js"></script>
+	</body>
+</html>
